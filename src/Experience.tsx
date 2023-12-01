@@ -1,6 +1,7 @@
 import { AccumulativeShadows, Environment, Float, Lightformer, OrbitControls, PerformanceMonitor, RandomizedLight, Stage } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { Color, Depth, LayerMaterial } from 'lamina'
+import { Leva } from 'leva'
 import { Perf } from 'r3f-perf'
 import { useRef, useState } from 'react'
 import * as THREE from 'three'
@@ -12,7 +13,8 @@ const Experience = () => {
 		<>
 			<Perf position='top-left' />
 			<OrbitControls makeDefault />
-			<AccumulativeShadows
+			{/* <Leva collapsed /> */}
+			{/* <AccumulativeShadows
 				position={[0, -1.16, 0]}
 				frames={100}
 				alphaTest={0.9}
@@ -23,7 +25,7 @@ const Experience = () => {
 					ambient={0.5}
 					position={[1, 5, -1]}
 				/>
-			</AccumulativeShadows>
+			</AccumulativeShadows> */}
 			{/** PerfMon will detect performance issues */}
 			<PerformanceMonitor onDecline={() => degrade(true)} />
 			{/* Renders contents "live" into a HDRI environment (scene.environment). */}
@@ -40,7 +42,12 @@ const Experience = () => {
 
 function Lightformers({ positions = [2, 0, 2, 0, 2, 0, 2, 0] }) {
 	const group = useRef(!null)
-	useFrame((state, delta) => (group.current!.position.z += delta * 10) > 20 && (group.current!.position.z = -60))
+	useFrame((state, delta, clock) => {
+		// group.current!.position.z += delta * 10) > 20 && (group.current!.position.z = -20))
+		group.current!.position.z = 5 * Math.sin(state.clock.elapsedTime + 2)
+
+		// console.log(delta)
+	})
 	return (
 		<>
 			{/* Ceiling */}
@@ -49,6 +56,7 @@ function Lightformers({ positions = [2, 0, 2, 0, 2, 0, 2, 0] }) {
 				rotation-x={Math.PI / 2}
 				position={[0, 5, -9]}
 				scale={[10, 10, 1]}
+				color='#ffe29c'
 			/>
 			<group rotation={[0, 0.5, 0]}>
 				<group ref={group}>
@@ -56,7 +64,8 @@ function Lightformers({ positions = [2, 0, 2, 0, 2, 0, 2, 0] }) {
 						<Lightformer
 							key={i}
 							form='circle'
-							intensity={2}
+							color='#ffe29c'
+							intensity={4}
 							rotation={[Math.PI / 2, 0, 0]}
 							position={[x, 4, i * 4]}
 							scale={[3, 1, 1]}
@@ -70,25 +79,28 @@ function Lightformers({ positions = [2, 0, 2, 0, 2, 0, 2, 0] }) {
 				rotation-y={Math.PI / 2}
 				position={[-5, 1, -1]}
 				scale={[20, 0.1, 1]}
+				color='#db3400'
 			/>
 			<Lightformer
 				rotation-y={Math.PI / 2}
 				position={[-5, -1, -1]}
 				scale={[20, 0.5, 1]}
+				color='#db3400'
 			/>
 			<Lightformer
 				rotation-y={-Math.PI / 2}
 				position={[10, 1, 0]}
 				scale={[20, 1, 1]}
+				color='#db3400'
 			/>
-			{/* Accent (red) */}
+			{/* Accent () */}
 			<Float
 				speed={5}
 				floatIntensity={2}
 				rotationIntensity={2}>
 				<Lightformer
 					form='ring'
-					color='red'
+					color='#ff6600'
 					intensity={1}
 					scale={10}
 					position={[-15, 4, -18]}
@@ -96,17 +108,17 @@ function Lightformers({ positions = [2, 0, 2, 0, 2, 0, 2, 0] }) {
 				/>
 			</Float>
 			{/* Background */}
-			<mesh scale={100}>
+			{/* <mesh scale={100}>
 				<sphereGeometry args={[1, 64, 64]} />
 				<LayerMaterial side={THREE.BackSide}>
 					<Color
-						color='#444'
+						color='#ff6600'
 						alpha={1}
 						mode='normal'
 					/>
 					<Depth
-						colorA='blue'
-						colorB='black'
+						colorA='#ff6600'
+						colorB='#ff6600'
 						alpha={0.5}
 						mode='normal'
 						near={0}
@@ -114,8 +126,12 @@ function Lightformers({ positions = [2, 0, 2, 0, 2, 0, 2, 0] }) {
 						origin={[100, 100, 100]}
 					/>
 				</LayerMaterial>
-			</mesh>
+			</mesh> */}
 		</>
 	)
 }
 export default Experience
+
+// orange ff6600
+// red db3400
+// cream ffe29c

@@ -14,5 +14,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 			}}>
 			<Experience />
 		</Canvas>
+		<Overlay />
 	</React.StrictMode>
 )
+
+function Overlay() {
+	return <>{/* <h2>Hello!</h2> */}</>
+}
