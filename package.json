@@ -15,7 +15,8 @@
 		"leva": "^0.9.35",
 		"r3f-perf": "^7.1.2",
 		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"react-dom": "^18.2.0",
+		"lamina": "1.1.23"
 	},
 	"devDependencies": {
 		"@types/react": "^18.2.37",
