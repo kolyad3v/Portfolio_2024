@@ -3,9 +3,11 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Canvas } from '@react-three/fiber'
 import Experience from './Experience'
+import Overlay from './Overlay'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
+		<Overlay />
 		<Canvas
 			shadows={true}
 			camera={{
@@ -14,10 +16,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 			}}>
 			<Experience />
 		</Canvas>
-		<Overlay />
 	</React.StrictMode>
 )
-
-function Overlay() {
-	return <>{/* <h2>Hello!</h2> */}</>
-}

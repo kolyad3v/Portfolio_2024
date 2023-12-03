@@ -11,7 +11,7 @@ const Experience = () => {
 
 	return (
 		<>
-			<Perf position='top-left' />
+			{/* <Perf position='top-left' /> */}
 			<OrbitControls makeDefault />
 			{/* <Leva collapsed /> */}
 			{/* <AccumulativeShadows
@@ -44,7 +44,7 @@ function Lightformers({ positions = [2, 0, 2, 0, 2, 0, 2, 0] }) {
 	const group = useRef(!null)
 	useFrame((state, delta, clock) => {
 		// group.current!.position.z += delta * 10) > 20 && (group.current!.position.z = -20))
-		group.current!.position.z = 5 * Math.sin(state.clock.elapsedTime + 2)
+		group.current!.position.z = 10 * Math.sin(0.5 * state.clock.elapsedTime + 1.3) - 10
 
 		// console.log(delta)
 	})
