@@ -50,11 +50,12 @@ h2 {
 	margin-top: 0;
 	margin-left: 5.2vw;
 	letter-spacing: -2.24px;
+	line-height: 106.3%; /* 34.016px */
 }
 nav {
 	position: absolute;
 	right: 5.2vw;
-	bottom: 2rem;
+	bottom: 4rem;
 }
 
 nav a {

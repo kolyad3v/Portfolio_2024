@@ -4,7 +4,7 @@ const Overlay = () => {
 			<h1>
 				Full Stack <br /> Developer.
 			</h1>
-			<h2>React // TS // PHP</h2>
+			<h2>Building with React, TS, PHP.</h2>
 			<nav>
 				<a
 					href='!#'
