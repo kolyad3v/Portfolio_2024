@@ -11,10 +11,10 @@ const Experience = () => {
 
 	return (
 		<>
-			{/* <Perf position='top-left' /> */}
+			<Perf position='top-left' />
 			<OrbitControls makeDefault />
 			{/* <Leva collapsed /> */}
-			{/* <AccumulativeShadows
+			<AccumulativeShadows
 				position={[0, -1.16, 0]}
 				frames={100}
 				alphaTest={0.9}
@@ -25,7 +25,7 @@ const Experience = () => {
 					ambient={0.5}
 					position={[1, 5, -1]}
 				/>
-			</AccumulativeShadows> */}
+			</AccumulativeShadows>
 			{/** PerfMon will detect performance issues */}
 			<PerformanceMonitor onDecline={() => degrade(true)} />
 			{/* Renders contents "live" into a HDRI environment (scene.environment). */}
