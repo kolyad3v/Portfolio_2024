@@ -37,7 +37,7 @@ h1 {
 	font-weight: 900;
 	line-height: 87.312%; /* 139.698px */
 	letter-spacing: -11.2px;
-	margin-left: 5.2vw;
+	margin-left: 5.1vw;
 	margin-bottom: 3vh;
 }
 
@@ -52,8 +52,9 @@ h2 {
 	letter-spacing: -2.24px;
 }
 nav {
-	float: right;
-	margin-right: 5.2vw;
+	position: absolute;
+	right: 5.2vw;
+	bottom: 2rem;
 }
 
 nav a {
@@ -68,23 +69,24 @@ nav a {
 
 nav a svg {
 	margin-left: 24px;
-	margin-bottom: -7px;
+	margin-bottom: -16px;
 }
 
-.arrow-svg .arrow {
+nav a .arrow-svg .arrow {
 	transition: transform 0.3s ease, opacity 0.3s ease;
 	transform: translateY(0);
 	opacity: 1;
 }
 
-.arrow-svg:hover .arrow-1 {
-	transform: translateY(5px);
+/* Add hover effects on the <a> tag */
+nav a:hover .arrow-svg .arrow-1 {
+	transform: translateY(10px);
 	opacity: 0.7;
 	transition-delay: 0.1s; /* Delay for the first arrow */
 }
 
-.arrow-svg:hover .arrow-2 {
-	transform: translateY(5px);
+nav a:hover .arrow-svg .arrow-2 {
+	transform: translateY(10px);
 	opacity: 0.7;
 	transition-delay: 0.2s; /* Delay for the second arrow */
 }

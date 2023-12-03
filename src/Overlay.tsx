@@ -4,7 +4,7 @@ const Overlay = () => {
 			<h1>
 				Full Stack <br /> Developer.
 			</h1>
-			<h2>React // Vue // TS + PHP // Node </h2>
+			<h2>React // TS // PHP</h2>
 			<nav>
 				<a
 					href='!#'
@@ -13,8 +13,8 @@ const Overlay = () => {
 					<svg
 						className='arrow-svg'
 						width='35'
-						height='40'
-						viewBox='0 0 35 40'
+						height='50'
+						viewBox='0 0 35 50'
 						fill='none'
 						xmlns='http://www.w3.org/2000/svg'>
 						<path
